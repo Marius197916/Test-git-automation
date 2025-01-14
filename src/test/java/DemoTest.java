@@ -12,8 +12,8 @@ public class DemoTest {
     public void browserTest() {
         manager.openBrowser();
         WebDriver driver = manager.getDriver();
-        driver.get("https://www.youtube.com");
+        driver.get("https://www.foxfishing.ro");
         String url = driver.getCurrentUrl();
-        assertTrue(url.contains("youtube"));
+        assertTrue(url.contains("foxfishing"));
     }
 }
