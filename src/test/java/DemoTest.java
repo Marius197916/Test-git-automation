@@ -15,5 +15,10 @@ public class DemoTest {
         driver.get("https://www.foxfishing.ro");
         String url = driver.getCurrentUrl();
         assertTrue(url.contains("foxfishing"));
+
+        /*
+        @Test
+        public void testLogin
+         */
     }
 }
