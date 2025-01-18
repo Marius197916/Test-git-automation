@@ -16,9 +16,5 @@ public class DemoTest {
         String url = driver.getCurrentUrl();
         assertTrue(url.contains("foxfishing"));
 
-        /*
-        @Test
-        public void testLogin
-         */
     }
 }
