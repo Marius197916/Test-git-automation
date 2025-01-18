@@ -18,6 +18,16 @@ public class YouTubePage {
         driver.findElement(By.xpath(icon)).click();
 
         Thread.sleep(10000);
-        driver.quit();
+
+
+     //   driver.findElement(By.xpath("//*[@id=\"yDmH0d\"]/c-wiz/div/div/div/div[2]/div[1]/div[3]/div[1]/form[2]/div/div/button/span")).click();
+      //  driver.findElement(By.xpath(icon)).click();
+       // Thread.sleep(10000);
+// nu gaseste elementul in pagina....in cazul de fata butonul de accept all
+
+
+
     }
 }
+
+//*[@id="yDmH0d"]/c-wiz/div/div/div/div[2]/div[1]/div[3]/div[1]/form[2]/div/div/button/span

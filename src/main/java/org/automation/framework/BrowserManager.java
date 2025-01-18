@@ -8,7 +8,7 @@ public class BrowserManager {
     WebDriver driver;
 
     public void openBrowser() {
-      driver = new ChromeDriver();
+        driver = new ChromeDriver();
     }
 
     public WebDriver getDriver() {
