@@ -40,7 +40,7 @@ public class LoginTest {
         if (element.isDisplayed() && element.isEnabled()) {
             element.click();
         } else {
-            System.out.println("Elementul nu este interactiv");
+            System.out.println("Elementul nu este vizibil in pagina");
         }
 
 
