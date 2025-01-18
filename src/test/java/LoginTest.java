@@ -23,9 +23,13 @@ public class LoginTest {
         //  driver.quit();
 
 
-        //   driver.findElement(By.xpath("//*[@id='klaro']/div/div/div/div/div/button")).click();
-        //   driver.findElement(By.xpath(icon)).click();
-        //   Thread.sleep(10000);
+        //  driver.findElement(By.xpath("//*[@id="account_info_711"]/div[2]/a[1]")).click();
+        // driver.findElement(By.xpath(icon)).click();
+        //  Thread.sleep(10000);
+
+         //  driver.findElement(By.xpath("/html/body/div[4]/div[1]/button")).click();
+         //  driver.findElement(By.xpath(icon)).click();
+         //  Thread.sleep(10000);
 
         // nu am variabila "klaro"
         // nu am variabila "account_info_711"
@@ -36,13 +40,15 @@ public class LoginTest {
         //  Thread.sleep(10000);
 
 
-        WebElement element = driver.findElement(By.xpath("//*[@id='account_info_711']/div[2]/a[1]"));
-        if (element.isDisplayed() && element.isEnabled()) {
-            element.click();
-        } else {
-            System.out.println("Elementul nu este vizibil in pagina");
-        }
+        //   WebElement element = driver.findElement(By.xpath("//*[@id='account_info_711']/div[2]/a[1]"));
+        //  if (element.isDisplayed() && element.isEnabled()) {
+        //      element.click();
+        //  } else {
+        //      System.out.println("Elementul nu este vizibil in pagina");
+        //  }
 
 
     }
 }
+// /html/body/div[4]/div[1]/button
+// //*[@id="account_info_711"]/div[2]/a[1]
