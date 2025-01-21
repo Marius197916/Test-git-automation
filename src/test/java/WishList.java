@@ -18,7 +18,7 @@ public class WishList {
         driver.findElement(By.xpath(icon)).click();
 
 
-        Thread.sleep(10000);
+      // Thread.sleep(10000);
 
         // Close the browser after the test
         driver.quit();
