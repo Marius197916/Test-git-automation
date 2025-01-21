@@ -1,4 +1,4 @@
 package org.automation.object;
 
-public class LoginTestObject {
+public class SearchButtonObject {
 }
