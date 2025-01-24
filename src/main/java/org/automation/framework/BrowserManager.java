@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BrowserManager {
 
-    private static WebDriver driver;
+    public static WebDriver driver;
 
     public void openBrowser() {
         driver = new ChromeDriver();
