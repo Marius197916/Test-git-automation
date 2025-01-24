@@ -43,6 +43,8 @@ public class HomePageObject {
 //    log.info("Check if products are displayed");
 //   return actions.getElements(HOME_PAGE_PRODUCTS);
 
+/*
 
+ */
 
 
