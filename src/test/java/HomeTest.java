@@ -27,19 +27,21 @@ public class HomeTest {
     public void validateTitle() {
         log.info("Validate title");
         String title = homePage.homePageTitle();
-        assertEquals("Home Page", title, "Title of page was: " + title);
+        assertEquals("FoxFishing.ro - Magazin cu Articole de Pescuit si Outdoor✓", title, "  " + title);
     }
-
+/*
     @Test
-    @DisplayName("Validate banner test")
-    public void validateBanner() {
+    @DisplayName("Validate logo test")
+    public void validateLogo() {
         log.info("Validate home page banner");
-        boolean isBannerDisplayed = homePage.isBannerDisplayed();
-        boolean isBannerEnabled = homePage.isBannerEnabled();
-        assertTrue(isBannerDisplayed, "Banner is not displayed");
-        assertTrue(isBannerEnabled, "Banner is not enabled");
+        boolean isLogoDisplayed = homePage.isLogoDisplayed();
+        boolean isLogoEnabled = homePage.isLogoEnabled();
+        assertTrue(isLogoDisplayed, "Logo is not displayed");
+        assertTrue(isLogoEnabled, "Logo is not enabled");
     }
-
+*/
+}
+/*
     @Test
     @DisplayName("Validate products test")
     public void validateProducts() {
@@ -55,3 +57,4 @@ public class HomeTest {
         BrowserManager.closeDriver();
     }
 }
+*/

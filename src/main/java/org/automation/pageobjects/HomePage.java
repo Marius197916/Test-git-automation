@@ -15,7 +15,7 @@ public class HomePage {
     BrowserManager manager = new BrowserManager();
     SeleniumActions actions = new SeleniumActions(manager);
 
-    private final static By HOME_PAGE_BANNER = By.xpath("////*[@id=\"index_index\"]/div[3]/div/div[1]/div/div");
+    private final static By HOME_PAGE_LOGO = By.xpath("//*[@id=\"det_img_3615049345\"]");
     private final static By HOME_PAGE_PRODUCTS = By.xpath("//*[@id=\"sidebox_511_93\"]");
 
     public void openHomePage() {
@@ -30,14 +30,14 @@ public class HomePage {
         return manager.getDriver().getTitle();
     }
 
-    public boolean isBannerDisplayed() {
-        log.info("Check if banner is displayed");
-        return actions.isElementDisplayed(HOME_PAGE_BANNER);
+    public boolean isLogoDisplayed() {
+        log.info("Check if logo is displayed");
+        return actions.isElementDisplayed(HOME_PAGE_LOGO);
     }
 
-    public boolean isBannerEnabled() {
-        log.info("Check if banner is enabled");
-        return actions.isElementEnabled(HOME_PAGE_BANNER);
+    public boolean isLogoEnabled() {
+        log.info("Check if logo is enabled");
+        return actions.isElementEnabled(HOME_PAGE_LOGO);
     }
 
     public List<WebElement> productsDisplayed() {
