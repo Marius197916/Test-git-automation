@@ -13,7 +13,7 @@ import java.util.List;
 
 import static org.automation.framework.BrowserManager.driver;
 import static org.junit.jupiter.api.Assertions.*;
-
+// dupa fiecare test...pauza si click pe cookie-uri
 public class HomeTest {
 
     HomePage homePage = new HomePage();
