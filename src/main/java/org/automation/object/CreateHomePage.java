@@ -3,12 +3,8 @@ package org.automation.object;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.automation.framework.BrowserManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-import java.util.List;
-
-public class HomePageObject {
+public class CreateHomePage {
 
        Logger log = LogManager.getRootLogger();
        BrowserManager manager = new BrowserManager();

@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class SearchButtonTest {
+public class CreateSearchButtonTest {
     BrowserManager manager = new BrowserManager();
 
     @Test

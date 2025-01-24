@@ -2,9 +2,8 @@ import org.automation.framework.BrowserManager;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-public class LoginTest {
+public class CreateLoginTest {
     BrowserManager manager = new BrowserManager();
 
     @Test

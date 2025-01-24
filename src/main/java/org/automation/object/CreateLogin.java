@@ -1,4 +1,4 @@
 package org.automation.object;
 
-public class WishListObject {
+public class CreateLogin {
 }

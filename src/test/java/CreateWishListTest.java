@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 
 // update versiunea de chrom?
-public class WishListTest {
+public class CreateWishListTest {
     BrowserManager manager = new BrowserManager();
 
     @Test
