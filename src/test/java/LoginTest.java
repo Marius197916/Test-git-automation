@@ -3,7 +3,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CreateLoginTest {
+public class LoginTest {
     BrowserManager manager = new BrowserManager();
 
     @Test

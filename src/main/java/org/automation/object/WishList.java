@@ -1,4 +1,4 @@
 package org.automation.object;
 
-public class CreateSearchButton {
+public class WishList {
 }
