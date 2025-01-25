@@ -13,6 +13,7 @@ import java.util.List;
 
 import static org.automation.framework.BrowserManager.driver;
 import static org.junit.jupiter.api.Assertions.*;
+
 // dupa fiecare test...pauza si click pe cookie-uri
 public class HomeTest {
 
@@ -26,10 +27,13 @@ public class HomeTest {
 
     @Test
     @DisplayName("Validate title test")
-    public void validateTitle() {
+    // am adaugat InterruptedException
+    public void validateTitle() throws InterruptedException {
         log.info("Validate title");
         String title = homePage.homePageTitle();
         assertEquals("FoxFishing.ro - Magazin cu Articole de Pescuit si Outdoor✓", title, "  " + title);
+        Thread.sleep(3000);
+
     }
 
     @Test
@@ -47,10 +51,13 @@ public class HomeTest {
 
     @Test
     @DisplayName("Validare buton Facebook")
-    public void validateFacebookButton() {
+    public void validateFacebookButton() throws InterruptedException {
         String buttonXPath = "//*[@id=\"index_index\"]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[1]/i";
         driver.findElement(By.xpath(buttonXPath)).click();
-
+        Thread.sleep(3000);
+      /*  String cookeXPath = "//*[@id="facebook"]/body/div[2]/div[1]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div[1]/div/div[2]";
+        driver.findElement(By.xpath(buttonXPath)).click();
+      */
     }
 
     @Test
