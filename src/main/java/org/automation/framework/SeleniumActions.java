@@ -32,4 +32,8 @@ public class SeleniumActions {
     public String getElementText(By locator) {
         return browserManager.getDriver().findElement(locator).getText();
     }
+
+    public void sendKeys(By locator, String text) {
+        browserManager.getDriver().findElement(locator).sendKeys(text);
+    }
 }
