@@ -2,7 +2,7 @@ package org.automation.framework.constants;
 
 public enum LoginDetails {
 
-    LOGIN_USER("mariusmihalache@gmail.com", "Enesedetamina179");
+    LOGIN_USER("mariusmihalache@gmail.com", "Enesedetamina");
 //nu l am putut adauga
      INVALID_USER("marius","123") {
 
