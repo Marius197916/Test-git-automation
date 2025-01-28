@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-import static java.awt.SystemColor.text;
-
 public class SeleniumActions {
 
     private final BrowserManager browserManager;
@@ -35,7 +33,7 @@ public class SeleniumActions {
         return browserManager.getDriver().findElement(locator).getText();
     }
 
-    public void sendKeys(By locator.String text){
+    public void sendKeys(By locator, String text) {
         browserManager.getDriver().findElement(locator).sendKeys(text);
     }
 }
