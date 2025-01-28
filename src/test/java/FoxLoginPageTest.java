@@ -19,7 +19,7 @@ public class FoxLoginPageTest{
 
     @Test
     public void loginTest(){
-        login.loginFox();
+        login.FoxLoginPage();
     }
 
     @AfterEach
