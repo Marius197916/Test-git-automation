@@ -6,7 +6,6 @@ import org.automation.framework.BrowserManager;
 import org.automation.framework.SeleniumActions;
 import org.automation.framework.constants.LoginDetails;
 import org.openqa.selenium.By;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LoginFox {
 
@@ -16,7 +15,7 @@ public class LoginFox {
 
     private final static By USERNAME_FIELD = By.xpath("//*[@id=login_popup711]");
     private final static By PASSWORD_FIELD = By.xpath("//*[@id=psw_popup711]");
-    private final static By SUMIT_BUTTON = By.xpath("//*[@id=popup711_login_popup_form_container]/form/div[4]/div[1]/button");
+    private final static By SUBMIT_BUTTON = By.xpath("//*[@id=popup711_login_popup_form_container]/form/div[4]/div[1]/button");
 
 
     public void openFoxLoginPage() {
@@ -36,6 +35,6 @@ public class LoginFox {
         String pass = LoginDetails.INVALID_USER.getPassword();
         actions.sendKeys(USERNAME_FIELD,user);
         actions.sendKeys(PASSWORD_FIELD,pass);
-        actions.clickElement(SUMMIT_BUTTON);
+        actions.clickElement(SUBMIT_BUTTON);
     }
 }
