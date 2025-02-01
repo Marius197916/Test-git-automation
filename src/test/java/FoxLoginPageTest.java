@@ -29,9 +29,12 @@ public class FoxLoginPageTest {
 
     @Test
     public void loginWithValidCredentials() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
-    
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        String buttonXPath = "//*[@id=login_popup711";
+        driver.findElement(By.xpath(buttonXPath)).click();
+
+
         login.FoxLoginPage(LoginDetails.LOGIN_USER.getUsername(), LoginDetails.LOGIN_USER.getPassword());
         assertTrue(login.isLoginSuccessful(), "Login should be successful with valid credentials.");
 
