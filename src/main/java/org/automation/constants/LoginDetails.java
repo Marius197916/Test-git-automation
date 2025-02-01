@@ -15,10 +15,6 @@ public enum LoginDetails {
         this.password = password;
     }
 
-    LoginDetails(String username) {
-        this.username = username;
-        this.password = password;
-    }
 
     public String getUsername() {
         return username;

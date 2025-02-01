@@ -12,6 +12,9 @@ public class BrowserManager {
     }
 
     public WebDriver getDriver() {
+        if (driver == null) {
+            openBrowser();
+        }
         return driver;
     }
 

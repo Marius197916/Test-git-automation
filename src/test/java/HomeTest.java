@@ -19,7 +19,7 @@ import java.util.List;
 import static org.automation.framework.BrowserManager.driver;
 import static org.junit.jupiter.api.Assertions.*;
 
-// dupa fiecare test...pauza si click pe cookie-uri
+
 public class HomeTest {
 
     HomePage homePage = new HomePage();
@@ -49,7 +49,8 @@ public class HomeTest {
         String buttonXPath = "//*[@id=\"tygh_container\"]/div[5]/div[2]/div[2]/div[2]/button";
         driver.findElement(By.xpath(buttonXPath)).click();
         log.info("Validate home page logo");
-    //    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         boolean isLogoDisplayed = homePage.isLogoDisplayed();
         boolean isLogoEnabled = homePage.isLogoEnabled();
         assertTrue(isLogoDisplayed, "Logo is not displayed");
@@ -61,7 +62,7 @@ public class HomeTest {
     public void validateFacebookButton() throws InterruptedException {
         String buttonXPath = "//*[@id=\"index_index\"]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[1]/i";
         driver.findElement(By.xpath(buttonXPath)).click();
-        Thread.sleep(3000);
+        //   Thread.sleep(3000);
         //nu merge calea aleasa
         //  String cookieXPath = "//*[@id='facebook']/body/div[2]/div[1]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div[1]";
         //  driver.findElement(By.xpath(cookieXPath)).click();
@@ -76,7 +77,7 @@ public class HomeTest {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[5]/div[1]/div/div[2]/div/div/div/div/div[2]/div/button[1]")));
         element.click();
 */
-        String buttonXPath = "//*[@id=\"index_index\"]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[2]/i";
+        String buttonXPath = "//*[@id=index_index]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[2]/i";
         driver.findElement(By.xpath(buttonXPath)).click();
 
 
