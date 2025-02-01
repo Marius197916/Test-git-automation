@@ -9,6 +9,8 @@ import org.automation.framework.BrowserManager;
 import org.automation.framework.SeleniumActions;
 import org.openqa.selenium.By;
 
+import java.util.Objects;
+
 public class LoginFox {
 
     Logger log = LogManager.getRootLogger();
@@ -32,5 +34,8 @@ public class LoginFox {
         log.info("Opening Fox login page...");
         manager.getDriver().get("https://www.foxfishing.ro/");
         manager.getDriver().manage().window().maximize();
+    }
+    public boolean isLoginSuccessful() {
+        return Objects.requireNonNull(manager.getDriver().getCurrentUrl()).contains("https://www.foxfishing.ro/");
     }
 }
