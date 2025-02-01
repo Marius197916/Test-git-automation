@@ -1,4 +1,3 @@
-
 package org.automation.framework;
 
 import org.openqa.selenium.WebDriver;

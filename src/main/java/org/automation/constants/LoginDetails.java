@@ -1,11 +1,11 @@
-package org.automation.framework.constants;
+package org.automation.constants;
 
 public enum LoginDetails {
 
-    LOGIN_USER("mariusmihalache@gmail.com", "Enesedetamina"),
-
-    INVALID_USER("marius", "123");
-
+    LOGIN_USER("mariusmihalache08@gmail.com", "Enesedetamina179"),
+    INVALID_USER("marius@gmail.com", "123786"),
+    EMPTY_USER("empty_USER", "empty_PASS"),
+    ;
 
     private final String username;
     private String password;
@@ -14,6 +14,12 @@ public enum LoginDetails {
         this.username = username;
         this.password = password;
     }
+
+    LoginDetails(String username) {
+        this.username = username;
+        this.password = password;
+    }
+
     public String getUsername() {
         return username;
     }

@@ -40,8 +40,8 @@ public class HomePage {
         return actions.isElementEnabled(HOME_PAGE_LOGO);
     }
 
-   public List<WebElement> productsDisplayed() {
-        log.info("Check if products are displayed");
+  public List<WebElement> productsDisplayed() {
+       log.info("Check if products are displayed");
         return actions.getElements(HOME_PAGE_PRODUCTS);
     }
 }
