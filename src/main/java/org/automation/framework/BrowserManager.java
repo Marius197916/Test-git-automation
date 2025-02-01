@@ -10,7 +10,7 @@ public class BrowserManager {
     public void openBrowser() {
         driver = new ChromeDriver();
     }
-
+// if the driver is null, it will open a new browser
     public WebDriver getDriver() {
         if (driver == null) {
             openBrowser();

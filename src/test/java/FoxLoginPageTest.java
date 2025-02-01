@@ -6,7 +6,14 @@ import org.automation.pageobjects.LoginFox;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
+import static org.automation.framework.BrowserManager.driver;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -22,8 +29,12 @@ public class FoxLoginPageTest {
 
     @Test
     public void loginWithValidCredentials() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
+    
         login.FoxLoginPage(LoginDetails.LOGIN_USER.getUsername(), LoginDetails.LOGIN_USER.getPassword());
-       assertTrue(login.isLoginSuccessful(), "Login should be successful with valid credentials.");
+        assertTrue(login.isLoginSuccessful(), "Login should be successful with valid credentials.");
+
     }
 
     @Test

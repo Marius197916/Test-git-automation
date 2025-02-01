@@ -72,11 +72,11 @@ public class HomeTest {
     @Test
     @DisplayName("Validare buton Instagram")
     public void validateInstagramButton() {
-/*
+
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[5]/div[1]/div/div[2]/div/div/div/div/div[2]/div/button[1]")));
         element.click();
-*/
+
         String buttonXPath = "//*[@id=index_index]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[2]/i";
         driver.findElement(By.xpath(buttonXPath)).click();
 
@@ -94,7 +94,7 @@ public class HomeTest {
         driver.findElement(By.xpath(buttonXPath)).click();
         String cookieXPath = "(//button[@aria-label='Accept all'])[1]";
         driver.findElement(By.xpath(buttonXPath)).click();
-        //driver.quit();
+
     }
 
     @AfterEach
