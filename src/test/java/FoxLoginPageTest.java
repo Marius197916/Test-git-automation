@@ -31,7 +31,7 @@ public class FoxLoginPageTest {
     public void loginWithValidCredentials() {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        String buttonXPath = "//*[@id=login_popup711";
+        String buttonXPath = "//*[@id='login_popup711']";
         driver.findElement(By.xpath(buttonXPath)).click();
 
 
