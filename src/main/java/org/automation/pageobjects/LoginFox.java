@@ -23,15 +23,15 @@ public class LoginFox {
     private final static By SUBMIT_BUTTON = By.xpath("//*[@id='popup711_login_popup_form_container']/form/div[4]/div[1]/button");
 
     // Constructor pentru a initializa BrowserManager
-        public LoginFox(BrowserManager browserManager) {
+    public LoginFox(BrowserManager browserManager) {
         this.manager = browserManager;
         this.actions = new SeleniumActions(manager);
     }
 
     // Metoda care dă click pe iconița de login
     public boolean validateLOGIN_ICON() {
-                actions.clickElement(LOGIN_BUTTON);
-                actions.clickElement(LOGIN_ICON);
+        actions.clickElement(LOGIN_BUTTON);
+        actions.clickElement(LOGIN_ICON);
         return false;
     }
 
@@ -52,14 +52,15 @@ public class LoginFox {
     }
 
     // Metoda care verifică dacă login-ul a fost realizat cu succes
-        public boolean isLoginSuccessful() {
+    public boolean isLoginSuccessful() {
         return manager.getDriver().getCurrentUrl().contains("https://www.foxfishing.ro/");
     }
 
     // Metoda  dă click pe butonul "Accept All"
-       public boolean validateACCEPT_ALL_BUTTON() {
 
-            actions.clickElement(ACCEPT_ALL_BUTTON);
+    public boolean validateACCEPT_ALL_BUTTON() {
+        log.info("Clicking on 'Accept All' button...");
+        actions.clickElement(ACCEPT_ALL_BUTTON);
 
         return false;
     }
@@ -67,8 +68,7 @@ public class LoginFox {
     // Metoda care validează și dă click pe butonul "Asta e ok"
     public boolean validateASTA_E_OK_BUTTON() {
         log.info("Clicking on 'Asta e ok' button...");
-
-            actions.clickElement(ASTA_E_OK_BUTTON);
+        actions.clickElement(ASTA_E_OK_BUTTON);
         return false;
     }
 
