@@ -44,13 +44,14 @@ public class HomeTest {
     @Test
     @DisplayName("Validate logo test")
     public void validateLogo() {
-        // nu vad butonul de logo pe pagina
+
         //wait time de implementat
-        String buttonXPath = "//*[@id=\"tygh_container\"]/div[5]/div[2]/div[2]/div[2]/button";
+        String buttonXPath = "//*[@id=tygh_container]/div[5]/div[2]/div[2]/div[2]/button";
         driver.findElement(By.xpath(buttonXPath)).click();
         log.info("Validate home page logo");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=tygh_container]/div[5]/div[2]/div[2]/div[2]/button")));
         boolean isLogoDisplayed = homePage.isLogoDisplayed();
         boolean isLogoEnabled = homePage.isLogoEnabled();
         assertTrue(isLogoDisplayed, "Logo is not displayed");
