@@ -28,19 +28,10 @@ public class LoginFox {
         this.actions = new SeleniumActions(manager);
     }
 
-    // Metoda care validează vizibilitatea și dă click pe iconița de login
+    // Metoda care dă click pe iconița de login
     public boolean validateLOGIN_ICON() {
-        if (isElementVisible(LOGIN_ICON)) {
-            actions.clickElement(LOGIN_ICON);
-            if (isElementVisible(LOGIN_BUTTON)) {
                 actions.clickElement(LOGIN_BUTTON);
-                return true;
-            } else {
-                log.error("Login button not visible.");
-            }
-        } else {
-            log.error("Login icon not visible.");
-        }
+                actions.clickElement(LOGIN_ICON);
         return false;
     }
 
@@ -57,35 +48,27 @@ public class LoginFox {
         log.info("Opening Fox login page...");
         manager.getDriver().get("https://www.foxfishing.ro/");
         manager.getDriver().manage().window().maximize();
-        validateACCEPT_ALL_BUTTON(); // Apelarea metodei pentru acceptarea cookie-urilor
+
     }
 
     // Metoda care verifică dacă login-ul a fost realizat cu succes
-    public boolean isLoginSuccessful() {
+        public boolean isLoginSuccessful() {
         return manager.getDriver().getCurrentUrl().contains("https://www.foxfishing.ro/");
     }
 
-    // Metoda care validează și dă click pe butonul "Accept All"
-    public boolean validateACCEPT_ALL_BUTTON() {
-        log.info("Clicking on 'Accept All' button...");
-        if (isElementVisible(ACCEPT_ALL_BUTTON)) {
+    // Metoda  dă click pe butonul "Accept All"
+       public boolean validateACCEPT_ALL_BUTTON() {
+
             actions.clickElement(ACCEPT_ALL_BUTTON);
-            return true;
-        } else {
-            log.error("'Accept All' button not visible.");
-        }
+
         return false;
     }
 
     // Metoda care validează și dă click pe butonul "Asta e ok"
     public boolean validateASTA_E_OK_BUTTON() {
         log.info("Clicking on 'Asta e ok' button...");
-        if (isElementVisible(ASTA_E_OK_BUTTON)) {
+
             actions.clickElement(ASTA_E_OK_BUTTON);
-            return true;
-        } else {
-            log.error("'Asta e ok' button not visible.");
-        }
         return false;
     }
 
