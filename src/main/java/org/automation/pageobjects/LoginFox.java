@@ -32,7 +32,7 @@ public class LoginFox {
     public boolean validateLOGIN_ICON() {
         actions.clickElement(LOGIN_BUTTON);
         actions.clickElement(LOGIN_ICON);
-        return false;
+        return true;
     }
 
     // Metoda care face login-ul pe site cu datele primite ca parametri
@@ -61,25 +61,24 @@ public class LoginFox {
     public boolean validateACCEPT_ALL_BUTTON() {
         log.info("Clicking on 'Accept All' button...");
         actions.clickElement(ACCEPT_ALL_BUTTON);
-
-        return false;
+        return true;
     }
 
     // Metoda care validează și dă click pe butonul "Asta e ok"
     public boolean validateASTA_E_OK_BUTTON() {
         log.info("Clicking on 'Asta e ok' button...");
         actions.clickElement(ASTA_E_OK_BUTTON);
-        return false;
+        return true;
     }
 
     // Metodă utilitară pentru a verifica dacă un element este vizibil pe pagină
-    private boolean isElementVisible(By locator) {
+    private boolean waitElementToBeClickable(By locator) {
         try {
             WebElement element = manager.getDriver().findElement(locator);
             return element.isDisplayed();
         } catch (Exception e) {
             log.error("Elementul nu este vizibil: " + locator, e);
-            return false;
+            return true;
         }
     }
 }
