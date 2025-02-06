@@ -1,0 +1,6 @@
+org\automation\framework\SeleniumActions.class
+org\automation\constants\LoginDetails.class
+org\automation\pageobjects\LoginFox.class
+org\automation\framework\BrowserManager.class
+org\automation\pageobjects\CreateAccountPage.class
+org\automation\pageobjects\HomePage.class
