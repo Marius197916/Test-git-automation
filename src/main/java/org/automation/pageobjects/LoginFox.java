@@ -21,6 +21,7 @@ public class LoginFox {
     private final static By USERNAME_FIELD = By.xpath("//*[@id='login_popup711']");
     private final static By PASSWORD_FIELD = By.xpath("//*[@id='psw_popup711']");
     private final static By SUBMIT_BUTTON = By.xpath("//*[@id='popup711_login_popup_form_container']/form/div[4]/div[1]/button");
+  //  private final static By SEARCH_FIELD = By.xpath("//*[@id='search_input']");
 
     // Constructor pentru a initializa BrowserManager
     public LoginFox(BrowserManager browserManager) {
