@@ -12,12 +12,21 @@ public class LoginFox {
     Logger log = LogManager.getRootLogger();
     BrowserManager manager;
     SeleniumActions actions;
+// de inlocuit toti locatorii
+// private final static By ASTA_E_OK_BUTTON = By.xpath("");
+// private final static By ACCEPT_ALL_BUTTON = By.xpath("");
+// private final static By LOGIN_ICON = By.xpath("");
+// private final static By LOGIN_BUTTON = By.xpath("");
+// private final static By USERNAME_FIELD = By.xpath("");
+// private final static By PASSWORD_FIELD = By.xpath("");
+// private final static By SUBMIT_BUTTON = By.xpath("");
+// private final static By SEARCH_FIELD = By.xpath("");
 
     // Locatori pentru elementele de pe pagina de login
-    private final static By ASTA_E_OK_BUTTON = By.xpath("//*[@id=klaro]/div/div/div/div/div/button");
+    private final static By ASTA_E_OK_BUTTON = By.xpath("//*[@id=\"klaro\"]/div/div/div/div/div/button");
     private final static By ACCEPT_ALL_BUTTON = By.xpath("//*[@id='tygh_container']/div[5]/div[2]/div[2]/div[2]/button");
-    private final static By LOGIN_ICON = By.xpath("//*[@id='sw_dropdown_711']");
-    private final static By LOGIN_BUTTON = By.xpath("//*[@id='account_info_711']/div[2]/a[1]");
+    private final static By LOGIN_ICON = By.xpath("//*[@id=\"sw_dropdown_711\"]/a");
+    private final static By LOGIN_BUTTON = By.xpath("//*[@id=\"account_info_711\"]/div[2]/a[1]");
     private final static By USERNAME_FIELD = By.xpath("//*[@id='login_popup711']");
     private final static By PASSWORD_FIELD = By.xpath("//*[@id='psw_popup711']");
     private final static By SUBMIT_BUTTON = By.xpath("//*[@id='popup711_login_popup_form_container']/form/div[4]/div[1]/button");
@@ -31,8 +40,13 @@ public class LoginFox {
 
     // Metoda care dă click pe iconița de login
     public boolean validateLOGIN_ICON() {
-        actions.clickElement(LOGIN_BUTTON);
+       // actions.clickElement(LOGIN_BUTTON);
         actions.clickElement(LOGIN_ICON);
+        return true;
+    }
+    // Metoda care dă click pe iconița login button
+    public boolean validateLOGIN_BUTTON() {
+        actions.clickElement(LOGIN_BUTTON);
         return true;
     }
 

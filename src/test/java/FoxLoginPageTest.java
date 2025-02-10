@@ -35,7 +35,7 @@ public class FoxLoginPageTest {
     @Order(value = 5)
     public void loginWithValidCredentials() {
         log.info("Testing login with valid credentials...");
-        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(10));
         login.FoxLoginPage(LoginDetails.LOGIN_USER.getUsername(), LoginDetails.LOGIN_USER.getPassword());
         assertTrue(login.isLoginSuccessful(), "Login should be successful with valid credentials.");
     }
@@ -45,7 +45,7 @@ public class FoxLoginPageTest {
     @Order(value = 6)
     public void loginWithInvalidCredentials() {
         log.info("Testing login with invalid credentials...");
-        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(10));
         login.FoxLoginPage(LoginDetails.INVALID_USER.getUsername(), LoginDetails.INVALID_USER.getPassword());
         assertTrue(login.isLoginSuccessful(), "Login should fail with invalid credentials.");
     }
@@ -55,7 +55,7 @@ public class FoxLoginPageTest {
     @Order(value = 7)
     public void loginWithEmptyCredentials() {
         log.info("Testing login with empty credentials...");
-        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(10));
         login.FoxLoginPage(LoginDetails.EMPTY_USER.getUsername(), LoginDetails.EMPTY_USER.getPassword());
         assertTrue(login.isLoginSuccessful(), "Login should fail with empty credentials.");
     }
@@ -65,8 +65,8 @@ public class FoxLoginPageTest {
     @Order(value = 3)
     public void validateLOGIN_ICON() {
         log.info("Validating login icon visibility and click ability...");
-        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='sw_dropdown_711']")));
+        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"sw_dropdown_711\"]/a")));
         assertTrue(login.validateLOGIN_ICON(), "Login icon should be visible and clickable.");
     }
 
@@ -74,8 +74,8 @@ public class FoxLoginPageTest {
     @Order(value = 4)
     public void validateLOGIN_BUTTON() {
         log.info("Validating button icon visibility and click ability...");
-        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='account_info_711']/div[2]/a[1]")));
+        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"account_info_711\"]/div[2]/a[1]")));
         assertTrue(login.validateLOGIN_ICON(), "Login button should be visible and clickable.");
     }
 
@@ -85,7 +85,7 @@ public class FoxLoginPageTest {
 
     public void validateACCEPT_ALL_BUTTON() {
         log.info("Validating 'Accept All' button click...");
-        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(5));
+        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='tygh_container']/div[5]/div[2]/div[2]/div[2]/button")));
         assertTrue(login.validateACCEPT_ALL_BUTTON(), "'Accept All' button should be visible and clickable.");
     }
@@ -95,8 +95,8 @@ public class FoxLoginPageTest {
     @Order(value = 2)
     public void ASTA_E_OK_BUTTON() {
         log.info("Validating 'Asta e ok' button click...");
-        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='klaro']/div/div/div/div/div/button")));
+        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"klaro\"]/div/div/div/div/div/button")));
         assertTrue(login.validateASTA_E_OK_BUTTON(), "'Asta e ok' button should be visible and clickable.");
     }
 //    @AfterEach

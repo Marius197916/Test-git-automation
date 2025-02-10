@@ -14,6 +14,8 @@ public class CreateAccountPage {
     BrowserManager manager = new BrowserManager();
     SeleniumActions actions = new SeleniumActions(manager);
 
+   // private static final Logger log = LogManager.getLogger(CreateAccountPage.class);
+
     private final static By ACCEPT_ALL_BUTTON = By.xpath("//*[@id='tygh_container']/div[5]/div[2]/div[2]/div[2]/button");
     //  private final static By ASTA_E_OK_BUTTON = By.xpath("//*[@id=klaro]/div/div/div/div/div/button");
     private final static By INREGISTRARE_ACCOUNT_BUTTON = By.xpath("//*[@id=account_info_711]/div[2]/a[2]");
