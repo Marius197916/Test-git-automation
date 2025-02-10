@@ -60,13 +60,10 @@ public class HomeTest {
 
     @Test
     @DisplayName("Validare buton Facebook")
-    public void validateFacebookButton() throws InterruptedException {
+    public void validateFacebookButton() {
         String buttonXPath = "//*[@id=\"index_index\"]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[1]/i";
         driver.findElement(By.xpath(buttonXPath)).click();
-        //   Thread.sleep(3000);
-        //nu merge calea aleasa
-        //  String cookieXPath = "//*[@id='facebook']/body/div[2]/div[1]/div/div[2]/div/div/div/div/div[2]/div/div[2]/div[1]";
-        //  driver.findElement(By.xpath(cookieXPath)).click();
+
 
     }
 

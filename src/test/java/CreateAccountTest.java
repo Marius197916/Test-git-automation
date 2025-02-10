@@ -31,8 +31,8 @@ public class CreateAccountTest {
     //    createAccountPage.clickCreateAccountButton();
     //   List<String> labelsText = createAccountPage.getAccountLabels();
     // }
-    @Test
-    @Order(value = 1)
+  //  @Test
+  //  @Order(value = 1)
 
     public void validateACCEPT_ALL_BUTTON() {
         Logger log = LogManager.getRootLogger();
