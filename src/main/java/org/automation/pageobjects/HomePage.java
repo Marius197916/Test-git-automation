@@ -9,14 +9,17 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
+
 public class HomePage {
 
+    //   HomePage homePage = new HomePage();
     Logger log = LogManager.getRootLogger();
     BrowserManager manager = new BrowserManager();
     SeleniumActions actions = new SeleniumActions(manager);
 
     private final static By HOME_PAGE_LOGO = By.xpath("//div[@class='span16 et-fw-wrap margin-top margin-bottom hidden-phone hidden-tablet']//img");
     private final static By HOME_PAGE_PRODUCTS = By.xpath("//*[@id=\"sidebox_511_93\"]");
+    private final static By SEARCH_FIELD = By.xpath("//*[@id=\"search_input702\"]");
 
     public void openHomePage() {
         log.info("Open home page");
@@ -40,8 +43,13 @@ public class HomePage {
         return actions.isElementEnabled(HOME_PAGE_LOGO);
     }
 
-  public List<WebElement> productsDisplayed() {
-       log.info("Check if products are displayed");
+    public List<WebElement> productsDisplayed() {
+        log.info("Check if products are displayed");
         return actions.getElements(HOME_PAGE_PRODUCTS);
+    }
+
+    public List<WebElement> getSearchResults() {
+        log.info("Getting search results...");
+        return actions.getElements(SEARCH_FIELD);
     }
 }

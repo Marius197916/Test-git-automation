@@ -5,7 +5,10 @@ import org.apache.logging.log4j.Logger;
 import org.automation.framework.BrowserManager;
 import org.automation.framework.SeleniumActions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
 
 public class LoginFox {
 
@@ -17,20 +20,23 @@ public class LoginFox {
 // private final static By ACCEPT_ALL_BUTTON = By.xpath("");
 // private final static By LOGIN_ICON = By.xpath("");
 // private final static By LOGIN_BUTTON = By.xpath("");
-// private final static By USERNAME_FIELD = By.xpath("");
-// private final static By PASSWORD_FIELD = By.xpath("");
-// private final static By SUBMIT_BUTTON = By.xpath("");
-// private final static By SEARCH_FIELD = By.xpath("");
+// private final static By USERNAME_FIELD = By.xpath("//input[@id="login_popup711"]");
+// private final static By PASSWORD_FIELD = By.xpath("//input[@id="psw_popup711"]");
+// private final static By SUBMIT_BUTTON = By.xpath("//[@button[@type="submit"]");
+// private final static By SEARCH_FIELD = By.xpath("//*[@id="search_input702"]");
+// private final static By SEARCH_BUTTON = By.xpath("");
+
 
     // Locatori pentru elementele de pe pagina de login
     private final static By ASTA_E_OK_BUTTON = By.xpath("//*[@id=\"klaro\"]/div/div/div/div/div/button");
     private final static By ACCEPT_ALL_BUTTON = By.xpath("//*[@id='tygh_container']/div[5]/div[2]/div[2]/div[2]/button");
     private final static By LOGIN_ICON = By.xpath("//*[@id=\"sw_dropdown_711\"]/a");
     private final static By LOGIN_BUTTON = By.xpath("//*[@id=\"account_info_711\"]/div[2]/a[1]");
-    private final static By USERNAME_FIELD = By.xpath("//*[@id='login_popup711']");
-    private final static By PASSWORD_FIELD = By.xpath("//*[@id='psw_popup711']");
-    private final static By SUBMIT_BUTTON = By.xpath("//*[@id='popup711_login_popup_form_container']/form/div[4]/div[1]/button");
-  //  private final static By SEARCH_FIELD = By.xpath("//*[@id='search_input']");
+    private final static By USERNAME_FIELD = By.xpath("//input[@id=\"login_popup711\"]");
+    private final static By PASSWORD_FIELD = By.xpath("//input[@id=\"psw_popup711\"]");
+    private final static By SUBMIT_BUTTON = By.xpath("//[@button[@type=\"submit\"]");
+    private final static By SEARCH_FIELD = By.xpath("//*[@id=\"search_input702\"]");
+    // private final static  By SEARCH_BUTTON = By.xpath("");
 
     // Constructor pentru a initializa BrowserManager
     public LoginFox(BrowserManager browserManager) {
@@ -40,10 +46,11 @@ public class LoginFox {
 
     // Metoda care dă click pe iconița de login
     public boolean validateLOGIN_ICON() {
-       // actions.clickElement(LOGIN_BUTTON);
+        // actions.clickElement(LOGIN_BUTTON);
         actions.clickElement(LOGIN_ICON);
         return true;
     }
+
     // Metoda care dă click pe iconița login button
     public boolean validateLOGIN_BUTTON() {
         actions.clickElement(LOGIN_BUTTON);
@@ -79,6 +86,13 @@ public class LoginFox {
         return true;
     }
 
+    // metoda care cauta un produs in search bar
+    public void searchElementFromDropdown(String searchElement) {
+        log.info("Searching for product: {}" + searchElement);
+        actions.clickElement(SEARCH_FIELD);
+        actions.sendKeys(SEARCH_FIELD, searchElement);
+    }
+
     // Metoda care validează și dă click pe butonul "Asta e ok"
     public boolean validateASTA_E_OK_BUTTON() {
         log.info("Clicking on 'Asta e ok' button...");
@@ -96,4 +110,17 @@ public class LoginFox {
             return true;
         }
     }
+
+    public void searchElementFromDropDown(String searchElement) {
+        log.info("Searching for product: " + searchElement);
+        actions.sendKeys(SEARCH_FIELD, searchElement);
+
+    }
+
+    public List<WebElement> getSearchResults() {
+        log.info("Getting search results...");
+        actions.clickElement(SEARCH_FIELD);
+        return manager.getDriver().findElements(SEARCH_FIELD);
+    }
+
 }
