@@ -1,6 +1,9 @@
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.automation.framework.BrowserManager;
+import org.automation.framework.SeleniumActions;
 import org.automation.pageobjects.HomePage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -22,8 +25,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class HomeTest {
 
+    BrowserManager manager;
+    SeleniumActions actions;
     HomePage homePage = new HomePage();
     Logger log = LogManager.getRootLogger();
+    private HomeTest login;
 
     @BeforeEach
     public void setUp() {
@@ -31,8 +37,8 @@ public class HomeTest {
     }
 
     @Test
+    @Severity(SeverityLevel.MINOR)
     @DisplayName("Validate title test")
-    // am adaugat InterruptedException
     public void validateTitle() throws InterruptedException {
         log.info("Validate title");
         String title = homePage.homePageTitle();
@@ -42,10 +48,9 @@ public class HomeTest {
     }
 
     @Test
+    @Severity(SeverityLevel.MINOR)
     @DisplayName("Validate logo test")
     public void validateLogo() {
-
-        //wait time de implementat
         String buttonXPath = "//*[@id=tygh_container]/div[5]/div[2]/div[2]/div[2]/button";
         driver.findElement(By.xpath(buttonXPath)).click();
         log.info("Validate home page logo");
@@ -59,15 +64,16 @@ public class HomeTest {
     }
 
     @Test
+    @Severity(SeverityLevel.MINOR)
     @DisplayName("Validare buton Facebook")
     public void validateFacebookButton() {
+
         String buttonXPath = "//*[@id=\"index_index\"]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[1]/i";
         driver.findElement(By.xpath(buttonXPath)).click();
-
-
     }
 
     @Test
+    @Severity(SeverityLevel.MINOR)
     @DisplayName("Validare buton Instagram")
     public void validateInstagramButton() {
 
@@ -86,6 +92,7 @@ public class HomeTest {
     }
 
     @Test
+    @Severity(SeverityLevel.MINOR)
     @DisplayName("Validare buton Youtube")
     public void validateYouTubeButton() {
         String buttonXPath = "//*[@id=\"index_index\"]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[3]/i";

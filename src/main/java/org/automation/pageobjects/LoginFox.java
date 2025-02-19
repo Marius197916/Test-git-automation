@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
+import java.time.Duration;
 import java.util.List;
 
 public class LoginFox {
@@ -15,26 +16,16 @@ public class LoginFox {
     Logger log = LogManager.getRootLogger();
     BrowserManager manager;
     SeleniumActions actions;
-// de inlocuit toti locatorii
-// private final static By ASTA_E_OK_BUTTON = By.xpath("");
-// private final static By ACCEPT_ALL_BUTTON = By.xpath("");
-// private final static By LOGIN_ICON = By.xpath("");
-// private final static By LOGIN_BUTTON = By.xpath("");
-// private final static By USERNAME_FIELD = By.xpath("//input[@id="login_popup711"]");
-// private final static By PASSWORD_FIELD = By.xpath("//input[@id="psw_popup711"]");
-// private final static By SUBMIT_BUTTON = By.xpath("//[@button[@type="submit"]");
-// private final static By SEARCH_FIELD = By.xpath("//*[@id="search_input702"]");
-// private final static By SEARCH_BUTTON = By.xpath("");
 
 
     // Locatori pentru elementele de pe pagina de login
-    private final static By ASTA_E_OK_BUTTON = By.xpath("//*[@id=\"klaro\"]/div/div/div/div/div/button");
-    private final static By ACCEPT_ALL_BUTTON = By.xpath("//*[@id='tygh_container']/div[5]/div[2]/div[2]/div[2]/button");
+    private final static By ASTA_E_OK_BUTTON = By.xpath("//button[@class=\"cm-btn cm-btn-success\"]");
+    private final static By ACCEPT_ALL_BUTTON = By.xpath("//button[@onclick=\"fn_cookie_accept_all();\"]");
     private final static By LOGIN_ICON = By.xpath("//*[@id=\"sw_dropdown_711\"]/a");
-    private final static By LOGIN_BUTTON = By.xpath("//*[@id=\"account_info_711\"]/div[2]/a[1]");
+    private final static By LOGIN_BUTTON = By.xpath("//a[@data-ca-target-id=\"login_block711\"]");
     private final static By USERNAME_FIELD = By.xpath("//input[@id=\"login_popup711\"]");
     private final static By PASSWORD_FIELD = By.xpath("//input[@id=\"psw_popup711\"]");
-    private final static By SUBMIT_BUTTON = By.xpath("//[@button[@type=\"submit\"]");
+    private final static By SUBMIT_BUTTON = By.xpath("(//button[@class=\"ty-btn__login ty-btn__primary ty-btn\"])[2]");
     private final static By SEARCH_FIELD = By.xpath("//*[@id=\"search_input702\"]");
     // private final static  By SEARCH_BUTTON = By.xpath("");
 
@@ -46,7 +37,6 @@ public class LoginFox {
 
     // Metoda care dă click pe iconița de login
     public boolean validateLOGIN_ICON() {
-        // actions.clickElement(LOGIN_BUTTON);
         actions.clickElement(LOGIN_ICON);
         return true;
     }
@@ -65,7 +55,7 @@ public class LoginFox {
         actions.clickElement(SUBMIT_BUTTON);
     }
 
-    // Metoda care deschide pagina de login Fox și acceptă cookies
+    // Metoda care deschide pagina de login Fox și maximizează fereastra
     public void openFoxLoginPage() {
         log.info("Opening Fox login page...");
         manager.getDriver().get("https://www.foxfishing.ro/");
@@ -82,6 +72,7 @@ public class LoginFox {
 
     public boolean validateACCEPT_ALL_BUTTON() {
         log.info("Clicking on 'Accept All' button...");
+        waitElementToBeClickable(ACCEPT_ALL_BUTTON);
         actions.clickElement(ACCEPT_ALL_BUTTON);
         return true;
     }
@@ -107,12 +98,13 @@ public class LoginFox {
             return element.isDisplayed();
         } catch (Exception e) {
             log.error("Elementul nu este vizibil: " + locator, e);
-            return true;
+            return false;
         }
     }
 
     public void searchElementFromDropDown(String searchElement) {
         log.info("Searching for product: " + searchElement);
+        actions.clickElement(SEARCH_FIELD);
         actions.sendKeys(SEARCH_FIELD, searchElement);
 
     }

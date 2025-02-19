@@ -1,3 +1,5 @@
 CreateAccountTest.class
+InvalidLoginTest.class
 HomeTest.class
+BooksApiTest.class
 FoxLoginPageTest.class

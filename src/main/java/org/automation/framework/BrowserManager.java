@@ -7,7 +7,8 @@ public class BrowserManager {
 
     public static WebDriver driver;
 
-    public void openBrowser() {
+   public void openBrowser() {
+
         driver = new ChromeDriver();
     }
 // if the driver is null, it will open a new browser
@@ -20,5 +21,6 @@ public class BrowserManager {
 
     public static void closeDriver() {
         driver.close();
+
     }
 }
