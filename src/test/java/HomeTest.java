@@ -24,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 public class HomeTest {
+    private static final By ACCEPT_ALL_BUTTON = By.xpath("//button[@onclick=\"fn_cookie_accept_all();\"]");
 
     BrowserManager manager;
     SeleniumActions actions;
@@ -51,12 +52,12 @@ public class HomeTest {
     @Severity(SeverityLevel.MINOR)
     @DisplayName("Validate logo test")
     public void validateLogo() {
-        String buttonXPath = "//*[@id=tygh_container]/div[5]/div[2]/div[2]/div[2]/button";
+        String buttonXPath = "//div[@class='span16 et-fw-wrap margin-top margin-bottom hidden-phone hidden-tablet']//img";
         driver.findElement(By.xpath(buttonXPath)).click();
         log.info("Validate home page logo");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=tygh_container]/div[5]/div[2]/div[2]/div[2]/button")));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='span16 et-fw-wrap margin-top margin-bottom hidden-phone hidden-tablet']//img")));
         boolean isLogoDisplayed = homePage.isLogoDisplayed();
         boolean isLogoEnabled = homePage.isLogoEnabled();
         assertTrue(isLogoDisplayed, "Logo is not displayed");
@@ -78,16 +79,10 @@ public class HomeTest {
     public void validateInstagramButton() {
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("/html/body/div[5]/div[1]/div/div[2]/div/div/div/div/div[2]/div/button[1]")));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"index_index\"]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[2]/i")));
         element.click();
-
-        String buttonXPath = "//*[@id=index_index]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[2]/i";
+        String buttonXPath = "//*[@id=\"index_index\"]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[2]/i";
         driver.findElement(By.xpath(buttonXPath)).click();
-
-
-        String cookieXPath = "/html/body/div[5]/div[1]/div/div[2]/div/div/div/div/div[2]/div/button[1]";
-        driver.findElement(By.xpath(cookieXPath)).click();
-
 
     }
 
@@ -95,10 +90,10 @@ public class HomeTest {
     @Severity(SeverityLevel.MINOR)
     @DisplayName("Validare buton Youtube")
     public void validateYouTubeButton() {
+        //  actions.clickElement(ACCEPT_ALL_BUTTON);
         String buttonXPath = "//*[@id=\"index_index\"]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/div/div/a[3]/i";
         driver.findElement(By.xpath(buttonXPath)).click();
-        String cookieXPath = "(//button[@aria-label='Accept all'])[1]";
-        driver.findElement(By.xpath(buttonXPath)).click();
+
 
     }
 

@@ -2,7 +2,7 @@ package org.automation.constants;
 
 public enum LoginDetails {
 
-    LOGIN_USER("mariusmihalache08@gmail.com", "Enesedetamina179"),
+    LOGIN_USER("mariusmihalache08@gmail.com", "xxxxxxxxx"),
     INVALID_USER("marius@gmail.com", "123786"),
     EMPTY_USER("empty_USER", "empty_PASS"),
     ;

@@ -6,10 +6,7 @@ import org.automation.constants.LoginDetails;
 import org.automation.framework.BrowserManager;
 import org.automation.pageobjects.HomePage;
 import org.automation.pageobjects.LoginFox;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,7 +16,7 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class InvalidLoginTest {
-    HomePage homePage = new HomePage();
+
     Logger log = LogManager.getRootLogger();
     private BrowserManager browserManager;
     private LoginFox login;
@@ -33,10 +30,12 @@ public class InvalidLoginTest {
     }
 
     @Test
+    @Order(value = 2)
     @Severity(SeverityLevel.CRITICAL)
     public void loginWithInvalidCredentials() {
         log.info("Testing login with invalid credentials...");
         login.validateACCEPT_ALL_BUTTON();
+        login.validateASTA_E_OK_BUTTON();
         login.validateLOGIN_ICON();
         login.validateLOGIN_BUTTON();
         login.FoxLoginPage(LoginDetails.INVALID_USER.getUsername(), LoginDetails.INVALID_USER.getPassword());
@@ -45,21 +44,22 @@ public class InvalidLoginTest {
     }
 
     @Test
+    @Order(value = 1)
     @Severity(SeverityLevel.CRITICAL)
-    public void loginWithEmptyCredentials()throws InterruptedException {
+    public void loginWithEmptyCredentials() {
 
         log.info("Testing login with empty credentials...");
         login.validateACCEPT_ALL_BUTTON();
+        login.validateASTA_E_OK_BUTTON();
         login.validateLOGIN_ICON();
         login.validateLOGIN_BUTTON();
-        WebDriverWait wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(10));
         login.FoxLoginPage(LoginDetails.EMPTY_USER.getUsername(), LoginDetails.EMPTY_USER.getPassword());
         assertTrue(login.isLoginSuccessful(), "Login should fail with empty credentials.");
         System.out.println("Login failed with empty credentials.");
     }
+
     @AfterEach
-    public  void tearDown() {
-      //  browserManager.getDriver().manage().deleteAllCookies();
+    public void tearDown() {
         BrowserManager.closeDriver();
     }
 }

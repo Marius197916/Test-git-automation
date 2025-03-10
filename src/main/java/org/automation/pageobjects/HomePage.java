@@ -26,6 +26,8 @@ public class HomePage {
     private static final By HOME_PAGE_PRODUCTS = By.xpath("//*[@id=\"sidebox_511_93\"]");
     private static final By SEARCH_FIELD = By.xpath("//*[@id=\"search_input702\"]");
 
+
+
     // Constants
     private static final Duration DEFAULT_WAIT = Duration.ofSeconds(10);
 

@@ -46,4 +46,8 @@ public class SeleniumActions {
         Wait<WebDriver> wait = new WebDriverWait(browserManager.getDriver(), Duration.ofSeconds(timeOut));
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
+
+    public boolean isElementInvisible(By acceptAllButton) {
+                return false;
+    }
 }

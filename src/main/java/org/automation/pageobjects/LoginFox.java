@@ -1,5 +1,4 @@
 package org.automation.pageobjects;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.automation.framework.BrowserManager;
@@ -7,7 +6,6 @@ import org.automation.framework.SeleniumActions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-
 import java.time.Duration;
 import java.util.List;
 
@@ -30,7 +28,7 @@ public class LoginFox {
     // private final static  By SEARCH_BUTTON = By.xpath("");
 
     // Constructor pentru a initializa BrowserManager
-    public LoginFox(BrowserManager browserManager) {
+        public LoginFox(BrowserManager browserManager) {
         this.manager = browserManager;
         this.actions = new SeleniumActions(manager);
     }
@@ -48,7 +46,7 @@ public class LoginFox {
     }
 
     // Metoda care face login-ul pe site cu datele primite ca parametri
-    public void FoxLoginPage(String username, String password) {
+        public void FoxLoginPage(String username, String password) {
         log.info("Login to Fox with username: " + username);
         actions.sendKeys(USERNAME_FIELD, username);
         actions.sendKeys(PASSWORD_FIELD, password);
@@ -56,7 +54,7 @@ public class LoginFox {
     }
 
     // Metoda care deschide pagina de login Fox și maximizează fereastra
-    public void openFoxLoginPage() {
+        public void openFoxLoginPage() {
         log.info("Opening Fox login page...");
         manager.getDriver().get("https://www.foxfishing.ro/");
         manager.getDriver().manage().window().maximize();

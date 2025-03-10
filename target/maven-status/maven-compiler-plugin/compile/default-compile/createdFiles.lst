@@ -7,4 +7,3 @@ org\automation\pageobjects\LoginFox.class
 org\automation\framework\BrowserManager.class
 org\automation\pageobjects\CreateAccountPage.class
 org\automation\exceptions\ProductsException.class
-org\automation\pageobjects\BookCartPage.class
